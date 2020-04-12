@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv bash
+
+cd /deemix
+
+HOME=/deem
+
+exec \
+	s6-setuidgid abc python3 /deemix/server.py
