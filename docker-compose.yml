@@ -1,7 +1,7 @@
 version: '3.3'
 services:
     deemix:
-	    image: bocki/deemix
+        image: bocki/deemix
         container_name: Deemix
         volumes:
             - /your/storage/path/:/downloads
