@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bash
+
+# download and unpack
+
+echo "[cont-init.d] Downloading and unpacking"
+
+wget https://notabug.org/RemixDev/deemix/archive/master.zip
+unzip master.zip
+rm master.zip

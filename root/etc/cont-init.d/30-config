@@ -1,7 +1,6 @@
 #!/usr/bin/with-contenv bash
 
 # set home of the abc user
-
 usermod -d /deem abc
 
 # permissions
@@ -12,9 +11,3 @@ chown -R abc:abc \
 
 chown abc:abc \
  /downloads/
-
-# fixing a an ip error in the code to make the container work on a server
-echo "[cont-init.d] Fixing IP settings"
-
-sed -i 's/127.0.0.1/0.0.0.0/g' /deemix/server.py
-sed -i 's/127.0.0.1/0.0.0.0/g' /deemix/main.py

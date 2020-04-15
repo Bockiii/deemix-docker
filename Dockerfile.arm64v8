@@ -25,19 +25,11 @@ RUN \
     unzip 
 
 RUN \
-    wget https://notabug.org/RemixDev/deemix/archive/master.zip && \
-    unzip master.zip && \
-    rm master.zip && \
     mkdir /deem && \
     chown abc:abc /deem && \
     rm -R /config && \
     ln -sf /deem/.config/deemix /config && \
     ln -sf /downloads /deem/deemix\ Music
-
-WORKDIR /deemix
-
-RUN \
-    pip3 install -r requirements.txt
 
 COPY root/ /
 
