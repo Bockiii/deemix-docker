@@ -10,9 +10,8 @@ RUN \
     apk add --no-cache \
     gcc \
     g++ \
-    make \
-    wget \
-    unzip 
+    make
+
 
 RUN \
     mkdir /deem && \

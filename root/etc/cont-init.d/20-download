@@ -4,6 +4,19 @@
 
 echo "[cont-init.d] Downloading and unpacking"
 
-wget https://notabug.org/RemixDev/deemix/archive/master.zip
-unzip master.zip
-rm master.zip
+if [ ! -f "/deemix/server.py" ]; then
+    echo "[cont-init.d] First start, cloning repo"
+    git clone https://notabug.org/RemixDev/deemix.git
+    touch /deemix/updated
+else
+    cd /deemix
+    localv=$(git rev-parse HEAD)
+    remotev=$(git ls-remote https://notabug.org/RemixDev/deemix.git refs/heads/master | cut -c1-40)
+    if [ $localv = $remotev ]; then
+        echo -e "[cont-init.d] Latest Version. No update needed"
+    else
+        echo -e "[cont-init.d] Newer Version. Updating"
+        git pull
+        touch /deemix/updated
+    fi
+fi
