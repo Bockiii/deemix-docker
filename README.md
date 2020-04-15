@@ -36,6 +36,10 @@ services:
             - 33333:33333
 ```
 
+### Updating Deemix
+
+The container will look for a new update in the Deemix repo on every start and will update itself. So if you want to update Deemix, just stop and start the Container. Also works with docker-compose stop.
+
 ### Explanation:
 
 `-v /your/storage/path/:/downloads`     - Path for your music downloads.
@@ -54,7 +58,7 @@ To access the web interface, go to http://YOURSERVERIP:33333
 
 ## Tags
 
-`latest`                : Latest state of the master branch. Can be considered "working".
+`latest`                : Latest state of the master branch. Can be considered "working" but Deemix is under heavy development.
 
 Tag includes `amd64`, `arm32v7` and `arm64v8` architectures.
 
@@ -64,7 +68,7 @@ I am in no way affiliated with the Deemix project (or any other Deezloader-like 
 
 Dockerhub link for this container: https://hub.docker.com/r/bocki/deemix
 
-Repo for Deezloader Remix: https://notabug.org/RemixDev/deemix
+Repo for Deemix: https://notabug.org/RemixDev/deemix
 
 Issue Tracker for this Docker: https://github.com/Bockiii/deemix-docker/issues
 
