@@ -15,7 +15,7 @@ $ docker run -d --name Deemix \
               -v /your/config/location:/config \
               -e PUID=1000 \
               -e PGID=1000 \
-              -e ARL=1234567asdfghjcvbt35d76d \
+              -e ARL=1234567 \
               -p 33333:33333 \
               bocki/deemix
 ```
@@ -33,7 +33,7 @@ services:
         environment:
             - PUID=1000
             - PGID=1000
-            - ARL=1234567asdfghjcvbt35d76d
+            - ARL=1234567
         ports:
             - 33333:33333
 ```
@@ -52,7 +52,7 @@ The container will look for a new update in the Deemix repo on every start and w
 
 `-e PGID=1000`                          - OPTIONAL: Group ID, see above.
 
-`-e ARL=1234567asdfghjcvbt35d76d`       - OPTIONAL: If you want Deemix to automatically log in for everyone who opens the website, provide your ARL token via this Environment variable.
+`-e ARL=1234567`                        - OPTIONAL: If you want Deemix to automatically log in for everyone who opens the website, provide your ARL token via this Environment variable.
 
 `-p 33333:33333`                        - Port opened for the web interface.
 

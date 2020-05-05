@@ -9,5 +9,6 @@ services:
         environment:
             - PUID=1000
             - PGID=1000
+            - ARL=1234567
         ports:
             - 33333:33333

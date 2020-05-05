@@ -14,5 +14,5 @@ fi
 
 if [ ${#ARL} -gt 10 ]; then
     echo "[cont-init.d] Using ARL token from environment variable"
-    echo $ARL > /config/.arl
+    printf $ARL > /config/.arl
 fi
