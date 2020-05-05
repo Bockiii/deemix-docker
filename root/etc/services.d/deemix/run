@@ -4,5 +4,12 @@ cd /deemix
 
 HOME=/deem
 
-exec \
-	s6-setuidgid abc python3 /deemix/server.py
+if [ -f "/config/.arl" ]; then
+    echo "[services.d] Starting with ARL"
+	exec \
+		s6-setuidgid abc python3 /deemix/server.py --serverwide-arl
+else 
+	echo "[services.d] Starting without ARL"
+	exec \
+		s6-setuidgid abc python3 /deemix/server.py
+fi

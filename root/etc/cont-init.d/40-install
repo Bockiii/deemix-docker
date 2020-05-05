@@ -9,3 +9,10 @@ if [ -f "/deemix/updated" ]; then
     rm /deemix/updated
     echo "[cont-init.d] Installation done"
 fi
+
+# check for arl environment variable. if it is set, create the arl file
+
+if [ ${#ARL} -gt 10 ]; then
+    echo "[cont-init.d] Using ARL token from environment variable"
+    echo $ARL > /config/.arl
+fi
