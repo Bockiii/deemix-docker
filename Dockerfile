@@ -3,7 +3,7 @@ FROM lsiobase/alpine.python3:3.9
 ENV PUID=1000
 ENV PGID=1000
 
-EXPOSE 33333
+EXPOSE 9666
 
 RUN \
     apk update && \
