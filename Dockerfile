@@ -10,6 +10,8 @@ RUN \
     apk add --no-cache \
     gcc \
     g++ \
+    libffi-dev \
+    python3-dev \
     make
 
 
