@@ -6,12 +6,12 @@ echo "[cont-init.d] Downloading and unpacking"
 
 if [ ! -f "/deemix/server.py" ]; then
     echo "[cont-init.d] First start, cloning repo"
-    git clone https://notabug.org/RemixDev/deemix.git
+    git clone --recurse-submodules https://notabug.org/RemixDev/deemix-pyweb.git deemix
     touch /deemix/updated
 else
     cd /deemix
     localv=$(git rev-parse HEAD)
-    remotev=$(git ls-remote https://notabug.org/RemixDev/deemix.git refs/heads/master | cut -c1-40)
+    remotev=$(git ls-remote https://notabug.org/RemixDev/deemix-pyweb.git refs/heads/master | cut -c1-40)
     if [ $localv = $remotev ]; then
         echo -e "[cont-init.d] Latest Version. No update needed"
     else
