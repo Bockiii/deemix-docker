@@ -16,7 +16,7 @@ else
         echo -e "[cont-init.d] Latest Version. No update needed"
     else
         echo -e "[cont-init.d] Newer Version. Updating"
-        git pull
+        git pull --recurse-submodules
         touch /deemix/updated
     fi
 fi

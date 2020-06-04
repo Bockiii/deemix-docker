@@ -5,7 +5,7 @@
 if [ -f "/deemix/updated" ]; then
     echo "[cont-init.d] Installing"
     cd /deemix
-    pip3 install -r requirements.txt --quiet --disable-pip-version-check
+    pip3 install -U -r requirements.txt --quiet --disable-pip-version-check
     rm /deemix/updated
     echo "[cont-init.d] Installation done"
 fi
